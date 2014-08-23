@@ -23,7 +23,8 @@ my %WriteMakefileArgs = (
     "Function::Parameters" => 0,
     "Moo" => "1.006000",
     "Throwable::Error" => 0,
-    "WebService::BaseClientRole" => "0.0004"
+    "WebService::BaseClientRole" => "0.0004",
+    "aliased" => 0
   },
   "TEST_REQUIRES" => {
     "Exporter" => 0,
@@ -37,7 +38,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.0104",
+  "VERSION" => "0.0105",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -57,6 +58,7 @@ my %FallbackPrereqs = (
   "Test::More" => 0,
   "Throwable::Error" => 0,
   "WebService::BaseClientRole" => "0.0004",
+  "aliased" => 0,
   "strict" => 0,
   "warnings" => 0
 );

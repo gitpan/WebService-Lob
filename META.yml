@@ -28,4 +28,10 @@ requires:
   Moo: 1.006000
   Throwable::Error: 0
   WebService::BaseClientRole: 0.0004
-version: 0.0104
+  aliased: 0
+resources:
+  bugtracker: https://github.com/aanari/WebService-Lob/issues
+  repository: git://github.com/aanari/WebService-Lob.git
+version: 0.0105
+x_contributors:
+  - 'Naveed Massjouni <naveedm9@gmail.com>'

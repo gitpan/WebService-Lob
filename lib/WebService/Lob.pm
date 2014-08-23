@@ -1,11 +1,12 @@
 package WebService::Lob;
+$WebService::Lob::VERSION = '0.0105';
 use Moo;
 with 'WebService::BaseClientRole';
 
-our $VERSION = '0.0104'; # VERSION
+# VERSION
 
-use WebService::Lob::Exception::AddressNotFound;
-use WebService::Lob::Exception::AddressMissingInformation;
+use aliased 'WebService::Lob::Exception::AddressNotFound';
+use aliased 'WebService::Lob::Exception::AddressMissingInformation';
 
 use Function::Parameters ':strict';
 
@@ -46,9 +47,9 @@ method verify_address(
         address_country => $address_country,
     });
 
-    WebService::Lob::Exception::AddressNotFound->throw unless $result;
-    WebService::Lob::Exception::AddressMissingInformation->throw(
-        message => $result->{message}) if $result->{message};
+    AddressNotFound->throw unless $result;
+    AddressMissingInformation->throw( message => $result->{message} )
+        if $result->{message};
     return $result->{address};
 }
 
@@ -67,7 +68,7 @@ WebService::Lob
 
 =head1 VERSION
 
-version 0.0104
+version 0.0105
 
 =head1 SYNOPSIS
 
@@ -81,6 +82,8 @@ version 0.0104
 
 This module provides bindings for the
 L<Lob|https://www.lob.com/docs> API.
+
+=for markdown [![Build Status](https://travis-ci.org/aanari/WebService-Lob.svg?branch=master)](https://travis-ci.org/aanari/WebService-Lob)
 
 =head1 METHODS
 
@@ -229,9 +232,24 @@ The address you entered was found but more information is needed to match to a s
 
 =back
 
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+https://github.com/aanari/WebService-Lob/issues
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
 =head1 AUTHOR
 
 Ali Anari <ali@anari.me>
+
+=head1 CONTRIBUTOR
+
+=for stopwords Naveed Massjouni
+
+Naveed Massjouni <naveedm9@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
