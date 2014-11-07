@@ -1,5 +1,5 @@
 package WebService::Lob::Exception::AddressMissingInformation;
-$WebService::Lob::Exception::AddressMissingInformation::VERSION = '0.0105';
+$WebService::Lob::Exception::AddressMissingInformation::VERSION = '0.0107';
 use Moo;
 extends 'Throwable::Error';
 
@@ -19,19 +19,7 @@ WebService::Lob::Exception::AddressMissingInformation
 
 =head1 VERSION
 
-version 0.0105
-
-=head1 SEE ALSO
-
-Please see those modules/websites for more information related to this module.
-
-=over 4
-
-=item *
-
-L<WebService::Lob|WebService::Lob>
-
-=back
+version 0.0107
 
 =head1 BUGS
 

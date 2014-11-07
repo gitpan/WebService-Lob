@@ -1,14 +1,14 @@
 package WebService::Lob;
-$WebService::Lob::VERSION = '0.0105';
+$WebService::Lob::VERSION = '0.0107';
 use Moo;
-with 'WebService::BaseClientRole';
+with 'WebService::Client';
 
 # VERSION
 
 use aliased 'WebService::Lob::Exception::AddressNotFound';
 use aliased 'WebService::Lob::Exception::AddressMissingInformation';
 
-use Function::Parameters ':strict';
+use Method::Signatures;
 
 has '+base_url'   => ( default => 'https://api.lob.com/v1' );
 has api_key       => ( is => 'ro', required => 1           );
@@ -16,7 +16,7 @@ has states_uri    => ( is => 'ro', default => '/states'    );
 has countries_uri => ( is => 'ro', default => '/countries' );
 has verify_uri    => ( is => 'ro', default => '/verify'    );
 
-method BUILD {
+method BUILD(...) {
     $self->ua->credentials('api.lob.com:443', '', $self->api_key, '');
 }
 
@@ -68,7 +68,7 @@ WebService::Lob
 
 =head1 VERSION
 
-version 0.0105
+version 0.0107
 
 =head1 SYNOPSIS
 

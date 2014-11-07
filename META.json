@@ -26,10 +26,11 @@
       },
       "runtime" : {
          "requires" : {
-            "Function::Parameters" : "0",
+            "Method::Signatures" : "0",
             "Moo" : "1.006000",
             "Throwable::Error" : "0",
             "WebService::BaseClientRole" : "0.0004",
+            "WebService::Client" : "0",
             "aliased" : "0"
          }
       },
@@ -60,7 +61,7 @@
          "web" : "https://github.com/ananari/WebService-Lob"
       }
    },
-   "version" : "0.0105",
+   "version" : "0.0107",
    "x_contributors" : [
       "Naveed Massjouni <naveedm9@gmail.com>"
    ]
